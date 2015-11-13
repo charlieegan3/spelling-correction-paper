@@ -8,12 +8,11 @@
 \usepackage{natbib}
 
 \bibliographystyle{plain}
-\abstract{An expansion of the title and a contraction of the report.}
+\abstract{An expansion of the title and a contraction of the report. "this report invesigates", "similar pieces of work", "results showed, it was found"}
 
 
 \begin{document}
 \maketitle
-
 
 \section{Introduction}
 \label{sec:intro}
@@ -23,12 +22,17 @@ The aim of the introduction is to say what you are going to investigate in the r
 
 Guide length: 250 words.
 
+"evaluate the difference", explain the problem, define terms, why interesting / useful, "this report is organised as follows, list sections"
+
+
 \section{Background and related work}
 \label{sec:lit}
 
 A review of related work \cite{p2pbookv2,Burnett,p2pwiki}.
 
 Guide length: 500 words.
+
+further explain terms and problem and reading you have done - even if not papers, give a focus for my paper, "others have looked into...", only need 2-3 relevant papers that are well discussed.
 
 \section{Research question}
 \label{sec:rq}
@@ -42,6 +46,14 @@ question.
 
 Guide length: 500 words.
 
+"intro why asking questions", "the questions are as follows", "At which point does", and as a second "is there a significant difference between the search engines"
+
+"in order to answer this", "overview", explanation of tools
+
+"the datasets...", explain how generated, how controlled, list all the variables in the data.
+
+How the results are recorded and on what they will be compared (precision recall), or use accuracy? Need to explain why, accuracy might be appropriate for my experiment,
+
 \section{Experimental Design}
 \label{sec:exp}
 
@@ -50,6 +62,12 @@ target population? What are your datasets; i.e.\ your sample of the
 target population. What are the dependent and independent variables?
 
 Guide length: 500 words.
+
+first state the null hyps, one per question it seems, "significantly different" is the phrase to use it seems.
+
+detail test data and give justification for decisions
+
+"To test these hyps [what happens in the experiement]", "this was then repeated for each..."
 
 \section{Results}
 \label{sec:results}
@@ -67,6 +85,12 @@ informative and useful as a positive one, sometimes more so.
 
 Guide length: 500 words.
 
+table of the results in summary, same sentence ref a graph of the table.
+
+the results suggest that all decreased in accuracy as the number of corruptions increased. Also x did better then y - quote values to support / highlight things in the table
+
+then do a section for each comparison and hypothesis / quesion 5.1 5.2 - say was was and was not significant, in response to the question. Quote those p values!
+
 \section{Discussion}
 \label{sec:discuss}
 
@@ -77,6 +101,12 @@ experiments might be of benefit?
 
 Guide length: 400 words.
 
+results summary,
+
+limitations of the study. limited in data and tools compared. talk about any bias, are my typos real for instance? likely not.
+
+How to do it better next time, make better represenation of the population,
+
 \section{Conclusion}
 \label{sec:conc}
 
@@ -84,6 +114,8 @@ What have you done and why? What have you shown through your
 experiments?
 
 Guide length: 100 words.
+
+tiny, 1 pg on the work done, why done "id the best" / "test the difference", results summary, best worst wrt hyps,
 
 \bibliography{myrefs}
 
