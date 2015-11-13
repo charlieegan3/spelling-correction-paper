@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+
+\bibitem{Burnett}
+C.~Burnett, T.~J. Norman, and K.~Sycara.
+\newblock Stereotypical trust and bias in dynamic multi-agent systems.
+\newblock {\em ACM Transactions on Intelligent Systems and Technology},
+  4(2):26:1--26:22, 2013.
+
+\bibitem{p2pbookv2}
+Ian J. Taylor \&~Andrew Harrison.
+\newblock {\em From P2P and Grids to Services on the Web}.
+\newblock Springer, 2 edition, 2009.
+
+\bibitem{p2pwiki}
+Wikipedia.
+\newblock Peer-to-peer networks.
+\newblock \url{http://en.wikipedia.org/wiki/Peer-to-peer}.
+\newblock Accessed: 1st May, 2015.
+
+\end{thebibliography}
