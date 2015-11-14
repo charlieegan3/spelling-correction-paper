@@ -1,21 +1,42 @@
 require "open-uri"
 require "json"
 
+server = 1
+
+output = ""
 
 File.open('run.txt').readlines.map(&:chomp).each do |line|
+  sleep 0.5
   intended, corruption = line.split(" ")
 
-  result = JSON.parse(open("http://sirjest.herokuapp.com/?q=#{URI::encode(corruption)}").read)
+  server += 1 if server == 3 || server == 4
+  server += 1 if server == 3 || server == 4
+
+  result = JSON.parse(open("http://sirjest#{server}.herokuapp.com/?q=#{URI::encode(corruption)}").read)
   #result = JSON.parse(open("http://localhost:3000/?q=#{corruption}").read)
 
-  print [intended, corruption].join(" ")
+  output += [server, intended, corruption].join("\t")
+
+  print [server, intended, corruption].join("\t")
 
   result.each do |k, v|
-    # puts "#{k}: #{v["SuggestedTerm"]} #{v["TopTitle"]}"
+    status = v['StatusCode']
+
     v = [v["SuggestedTerm"], v["TopTitle"]].map(&:downcase).map(&:strip)
-    print " "
-    print " " + v.map(&:downcase).map(&:strip).include?(intended.downcase).to_s
+    if status == 200
+      output += "\t" + v.map(&:downcase).map(&:strip).map(&:split).map(&:join).include?(intended.downcase).to_s
+      print "\t" + v.map(&:downcase).map(&:strip).map(&:split).map(&:join).include?(intended.downcase).to_s
+    else
+      output += "\t" + status.to_s
+      print "\t" + status.to_s
+    end
   end
+
+  server += 1
+  server = 1 if server > 5
+  output += "\n"
   puts
 end
+
+File.open('output.tsv', 'w').write output
 
