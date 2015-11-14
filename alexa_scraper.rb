@@ -6,6 +6,10 @@ sites = []
 for i in 0..20
   url = "http://www.alexa.com/topsites/global;#{i}"
   doc = Nokogiri::HTML(open(url).read)
-  sites += doc.css('.desc-paragraph a').map {|x|x.text.gsub(/\.\w+/, '')}
-  puts sites
+  page = doc.css('.desc-paragraph a').map {|x|x.text}
+  page.select! {|x|x[-4..-1] == ".com" }
+  page.select! {|x|x.count(".") == 1}
+  page.map! {|x|x.gsub(".com", "")}
+  sites += page
+  puts page
 end
