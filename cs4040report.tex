@@ -25,8 +25,13 @@ Guide length: 250 words.
 
 reference any formalisms and define the terms you use (or reference), short overview of what's to be investigated and why this is of interest, report is organised as follows...
 
+Search engines offering query predictions are the research interest of the project. Search engines offer predictions to overcome corruption in user queries, where corruption is the combined effect of one or more typographical errors. While prediction performance is better than that of traditional spelling correction algorithms SOURCE the detailed processes behind predictions are not publicized. On a fundamental level, failed user queries followed by the user's own corrections are used to build a list of corrupted inputs for a desired result SOURCE.
 
+The project aim is to evaluate the variation in the prediction accuracy in responses, for increasingly corrupted terms, queried on a number of common search engines. Prediction accuracy is capability of a search engine suggest or adopt the intended term, given a corrupted version. The effect of query length in characters, for a given rate of corruption, is also investigated as part of the project.
 
+Information about search engine prediction accuracy for corrupted queries would be useful for those making mechanical use of search engines for spelling correction SOURCE. A ranked list of search engines by prediction accuracy could also be of interest to those with poor spelling or dexterity from conditions such as Dyslexia or Parkinson's disease. Also of interest would be the relationship between daily users and the performance of query prediction as a feature.
+
+Sections 2-7 cover: spelling correction background as a task in natural language processing, the research questions, the design of the comparison experiments, the results, their discussion and conclusion respectively.
 
 \section{Background and related work}
 \label{sec:lit}
@@ -81,14 +86,9 @@ talk about the datasets that will be used. talk about the variables ()
 
 Present the results. A good way to organise this is via subsections
 for each hypothesis you tested. Include graphs of results
-(e.g.\ Figure~\ref{fig:data}), tests of significance, etc. If you have
+, tests of significance, etc. If you have
 negative results, include them. A negative results is just as
 informative and useful as a positive one, sometimes more so.
-
-\begin{figure}
-\centerline{\includegraphics[width=5in]{basic-data-errors}}
-\caption{Some results.}\label{fig:data}
-\end{figure}
 
 Guide length: 500 words.
 
