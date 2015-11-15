@@ -24,16 +24,23 @@ Information about search engine prediction accuracy for corrupted queries would 
 
 Sections 2-7 cover: spelling correction background as a task in natural language processing, the research questions, the design of the comparison experiments, the results, their discussion and conclusion respectively.
 
-\section{Background and related work}
+\section{Background and Related Work}
 \label{sec:lit}
 
 A review of related work \cite{p2pbookv2,Burnett,p2pwiki}.
 
 Guide length: 500 words.
 
-further explain terms and problem and reading you have done - even if not papers, give a focus for my paper, "others have looked into...", only need 2-3 relevant papers that are well discussed.
+Further explain terms and problem and reading you have done - even if not papers, give a focus for my paper, "others have looked into...", only need 2-3 relevant papers that are well discussed.
 
-Ok to say there has been limited work on a topic, have a got at explaining why.
+Computerized spelling correction has been an active area of research since YEAR SOURCE. Early approaches, as well as more simplistic implementations today such as those found browsers, offer predications for strings with typographical errors by calculating \textit{edit} or \textit{Levenshtein } distance. The edit distance of two strings is the number of \textit{edit operations} required to transform one string to another SOURCE 200 PAGE. In 1966 Levenshtein described a model for such transformations SOURCE 1996. \textit{Levenshtein distance} has been the basis for many such implementations since (Error Model for Noisy Channel Spelling - section 2 SOURCE if required).
+
+Not only is calculating edit distances for an string against terms large dictionaries is computationally expensive (SOURCE An adaptive spell checker based on ps3m) these implementations are limited by the words as described by the dictionaries. There is no account taken of the relative key positions or that (SOME OTHER THING ABOUT TYPOS) SOURCE. For example, \textit{Facebokk} is more likely than \textit{Facebozk} to be a corrupted query for \textit{Facebook} though they have the same Edit and Levenshtein distances. Also it is not possible to make phonetic comparisons between strings, such as between \textit{'an introduction to \textbf{sea} programming'} and the expected result.
+
+
+
+
+
 
 \section{Research question}
 \label{sec:rq}
