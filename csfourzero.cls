@@ -112,7 +112,7 @@
 \let\@title\relax
 \let\@covertitle\relax
 
-\def\abstract#1{\gdef\@abstract{#1}} 
+\def\abstract#1{\gdef\@abstract{#1}}
 \let\@abstract\relax
 \def\abstractname{Abstract}
 
@@ -249,7 +249,7 @@
    \vspace*{\stretch{1}}
    \cp@DeptNameFont CS4040 Report\\
    \cprule\vspace*{0.4ex}\\
-   \cp@DeptNameFont Department of \cp@deptname\ \hfill 
+   \cp@DeptNameFont Department of \cp@deptname\ \hfill
       \cp@NumberFont\cp@monthyear\\
    \ignorespaces\cp@DeptAddressFont\cp@deptaddress%
  \end{titlepage}
@@ -263,7 +263,7 @@
    King's College\\%
    Aberdeen\hspace{1em} AB24 3UE}
 
-% Some other fixes to lengths 
+% Some other fixes to lengths
 \setlength \parindent{2em}
 \setlength \parskip  {\z@ \@plus 1\p@}
 \setlength \headsep  {16\p@}
@@ -285,7 +285,7 @@
     \kern 2.6\p@%
 }
 
-\ifcmmathp@% 
+\ifcmmathp@%
 % Only switch text to Times and keep Computer Modern for all math
         \renewcommand\rmdefault{ptm}
 \else%
