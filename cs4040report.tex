@@ -14,24 +14,18 @@
 \section{Introduction}
 \label{sec:intro}
 
-Search engines offering query predictions are the research interest of the project. Search engines offer predictions to overcome corruption in user queries, where corruption is the combined effect of one or more typographical errors. While prediction performance is better than that of traditional spelling correction algorithms SOURCE the detailed processes behind predictions are not publicized. On a fundamental level, failed user queries followed by the user's own corrections are used to build a list of corrupted inputs for a desired result SOURCE.
+Search engines offering query predictions are the research interest of the project. Search engines offer predictions to overcome corruption in user queries, where corruption is the combined effect of one or more typographical errors. While prediction performance is high, the details of processes behind predictions are not always fully disclosed. Failed user queries followed by a user's own corrections can build an aggregated list of corrupted inputs for an intended result, for longer queries the probabilities for words in context can also be accounted for \cite{noampatent}. Probabilistic edit-distance implementations are also used \cite{howtospellcorrector}.
 
 The project aim is to evaluate the variation in the prediction accuracy in responses, for increasingly corrupted terms, queried on a number of common search engines. Prediction accuracy is capability of a search engine suggest or adopt the intended term, given a corrupted version. The effect of query length in characters, for a given rate of corruption, is also investigated as part of the project.
 
-Information about search engine prediction accuracy for corrupted queries would be useful for those making mechanical use of search engines for spelling correction SOURCE. A ranked list of search engines by prediction accuracy could also be of interest to those with poor spelling or dexterity from conditions such as Dyslexia or Parkinson's disease. Also of interest would be the relationship between daily users and the performance of query prediction as a feature.
+Information about search engine prediction accuracy for corrupted queries would be useful for those making mechanical use of search engines for spelling correction. A ranked list of search engines by prediction accuracy could also be of interest to those with poor spelling or dexterity from conditions such as Dyslexia or Parkinson's disease. Also of interest would be the relationship between market share and the performance of query prediction as a feature.
 
 Sections 2-7 cover: spelling correction background as a task in natural language processing, the research questions, the design of the comparison experiments, the results, their discussion and conclusion respectively.
 
 \section{Background and Related Work}
 \label{sec:lit}
 
-A review of related work \cite{p2pbookv2,Burnett,p2pwiki}
-
-Guide length: 500 words.
-
-Further explain terms and problem and reading you have done - even if not papers, give a focus for my paper, "others have looked into...", only need 2-3 relevant papers that are well discussed.
-
-Computerized spelling correction has been an active area of research since YEAR SOURCE. Early approaches, as well as more simplistic implementations today such as those found browsers, offer predications for strings with typographical errors by calculating \textit{edit} or \textit{Levenshtein } distance. The edit distance of two strings is the number of \textit{edit operations} required to transform one string to another SOURCE 200 PAGE. In 1966 Levenshtein described a model for such transformations SOURCE 1996. \textit{Levenshtein distance} has been the basis for many such implementations since (Error Model for Noisy Channel Spelling - section 2 SOURCE if required).
+Computerized spelling correction has been an area of research since 1957 \cite{jameslpeterson1980}. Early approaches offered predications for strings with typographical errors by calculating \textit{edit} or \textit{Levenshtein } distance. The edit distance of two strings is the number of \textit{edit operations} required to transform one string to another \cite{introIR}. In 1966 Levenshtein described a model for such transformations \cite{levenshtein1966binary}. \textit{Levenshtein distance} has been the basis for many such implementations since (Error Model for Noisy Channel Spelling - section 2 SOURCE if required).
 
 Not only is calculating edit distances for an string against terms large dictionaries is computationally expensive (SOURCE An adaptive spell checker based on ps3m) these implementations are limited by the words as described by the dictionaries. There is no account taken of the relative key positions or that (SOME OTHER THING ABOUT TYPOS) SOURCE. For example, \textit{Facebokk} is more likely than \textit{Facebozk} to be a corrupted query for \textit{Facebook} though they have the same Edit and Levenshtein distances. Also it is not possible to make phonetic comparisons between strings, such as between \textit{'an introduction to \textbf{sea} programming'} and the expected result.
 

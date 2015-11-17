@@ -6,11 +6,10 @@ Alexa.
 \newblock \url{http://www.alexa.com/topsites}, 2015.
 \newblock Accessed: 14th Nov.
 
-\bibitem{Burnett}
-C.~Burnett, T.~J. Norman, and K.~Sycara.
-\newblock Stereotypical trust and bias in dynamic multi-agent systems.
-\newblock {\em ACM Transactions on Intelligent Systems and Technology},
-  4(2):26:1--26:22, 2013.
+\bibitem{introIR}
+Hinrich~Schütze Christopher D.~Manning, Prabhakar~Raghavan.
+\newblock {\em An Introduction to Information Retrieval, Section 3.3.3, p57}.
+\newblock Cambridge UP, 2009.
 
 \bibitem{scraper}
 Charlie~F. Egan.
@@ -18,16 +17,21 @@ Charlie~F. Egan.
 \newblock \url{https://github.com/charlieegan3/sirjest}, 2015.
 \newblock Accessed: 17th Nov.
 
-\bibitem{p2pbookv2}
-Ian J. Taylor \&~Andrew Harrison.
-\newblock {\em From P2P and Grids to Services on the Web}.
-\newblock Springer, 2 edition, 2009.
+\bibitem{levenshtein1966binary}
+Vladimir~I Levenshtein.
+\newblock Binary codes capable of correcting deletions, insertions, and
+  reversals.
+\newblock In {\em Soviet physics doklady}, volume~10, pages 707--710, 1966.
 
-\bibitem{p2pwiki}
-Wikipedia.
-\newblock Peer-to-peer networks.
-\newblock \url{http://en.wikipedia.org/wiki/Peer-to-peer}, 2009.
-\newblock Accessed: 1st May, 2015.
+\bibitem{howtospellcorrector}
+Peter Norvig.
+\newblock How to write a spelling corrector.
+\newblock \url{http://www.norvig.com/spell-correct.html}, 2015.
+\newblock Accessed: 17th Nov.
+
+\bibitem{noampatent}
+Noam Shazeer.
+\newblock \url{http://www.google.co.uk/patents/US8051374}.
 
 \bibitem{searchenginewiki}
 Wikipedia.
