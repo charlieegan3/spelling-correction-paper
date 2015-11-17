@@ -1,5 +1,5 @@
 \documentclass{csfourzero}
-\usepackage{url, natbib}
+\usepackage{url, natbib, upquote, multicol}
 
 \title{The effect of corruption on search engine query prediction}
 \author{Charlie F.\ Egan}
@@ -48,33 +48,30 @@ Here is clearly much work being done in the space of spelling correction automat
 
 To address these questions the prediction accuracy for a number of search engines will be compared when queried with corrupted terms of various lengths. Each search engine will be tested with the same set of corrupted terms and the accuracy of their returned predictions recorded.
 
-The following search engines will be tested: \textit{Ask, Baidu, Bing, DuckDuckGo, Google, Sogou, Yahoo, Yandex and Youdao}. These non-aggregating search engines all offer suggestions for misspelled queries. A parallel scraper GITHUB has been implemented to collect the results of each for a given query. Five instances of this scraper will be deployed to disposable environments on the Heroku PaaS and requests made against each to gather results from a local script.
+The following search engines will be tested: \textit{Ask, Baidu, Bing, DuckDuckGo, Google, Sogou, Yahoo, Yandex and Youdao}. These non-aggregating search engines all offer suggestions for misspelled queries and represent a majority of global general search engines \cite{searchenginewiki}. A parallel scraper \cite{scraper} has been implemented to collect the results of each for a given query. Five instances of this scraper will be deployed to disposable environments on the Heroku PaaS and requests made against each to gather results from a local script.
 
-The terms selected to derive corruptions will be .com website names of a given length selected from the Alexa Top 500 ALEXA, these seed terms are listed in appendix BLAH. Brand names that are either four, eight or twelve characters in length were selected to allow a constant corruption rate of 25\% to be applied. Longer word seeds were few and were excluded to ensure predominantly single word brands names were used.
+The terms selected to derive corruptions will be .com website names of a given length selected from the \textit{Alexa Top 500} \cite{alexatop500}, these seed terms are listed in Appendix 1. Brand names that are either four, eight or twelve characters in length were selected to allow a constant corruption rate of 25\% to be applied. Longer word seeds were few and were excluded to ensure predominantly single word brands names were used.
 
-Corruptions will be generated from seed terms using a substitution algorithm, see appendix BLAH. A corruption is applied by selecting a random, uncorrupted character and substituting it with an adjacent key on the keyboard to simulate typographical errors. Transformations, as based on the US (UK Macintosh) keyboard, are listed in appendix BLAH. Insertions of additional letters, letter deletions and transpositions will not be included to ensure consistency.
+Corruptions will be generated from seed terms using a substitution algorithm, see Appendix 2. A corruption is applied by selecting a random, uncorrupted character and substituting it with an adjacent key on the keyboard to simulate typographical errors. Transformations, as based on the US (UK Macintosh) keyboard, are listed in Appendix 3. Insertions of additional letters, letter deletions and transpositions will not be included to ensure consistency.
 
-In related work, spelling correction system performance is commonly assessed using Accuracy, alongside both Precision and Recall. In this experiment where, all queries are of single class, corrupted at 25\%, search engines will be compared on their \textit{Accuracy}. That is, for a given query set, what percentage of of corrupted queries cause the search engine to return the seed term. Given their rarity, collisions of corrupted spellings with other uncorrupted queries are assumed to be insignificant.
+In related work, spelling correction system performance is commonly assessed using Accuracy, alongside both Precision and Recall. In this experiment where, all queries are of single class, corrupted at 25\%, search engines will be compared on their \textit{Accuracy}. That is, for a given query set, what percentage of of corrupted queries cause the search engine to return the seed term. Given their rarity, collisions of corrupted spellings with other uncorrupted queries assumed to be insignificant.
 
 \section{Experimental Design}
 \label{sec:exp}
 
-detail test data and give justification for decisions
-
 The null hypotheses for the experiment are as follows:
 \begin{itemize}
-  \item{At a constant rate of corruption, accuracy is not significantly affected by the query length in characters. (H1)}
-  \item{Search engines do not differ significantly in their average accuracy for a range of query lengths. (H2)}
+  \item{At a constant rate of corruption, accuracy is not significantly affected by the query length in characters. (\textbf{H1})}
+  \item{Search engines do not differ significantly in their average accuracy for a range of query lengths. (\textbf{H2})}
 \end{itemize}
 
-The target population is all search terms that are the result of one or more typographical corruptions. Due to search engine rate-limiting and time constraints it is infeasible to test these in large numbers. Random seed terms such as strings of words would not be representative of real world queries. A consistent collection of realistic query phrases is challenging to generate without introducing bias. In this experiment Alexa rank word or compound word terms 4, 8 and 12 characters in length were selected. These are highly representative of typical queries and can be consistently corrupted at 25\%, such restrictions help reduce any bias. There were too few 16 character terms for them to be included as an additional set of seed terms.
+The target population is all search terms that are the result of one or more typographical corruptions. Due to search engine rate-limiting and time constraints it is infeasible to test these in large numbers. Random seed terms such as strings of words would not be representative of real world queries. A consistent collection of realistic query phrases is challenging to generate without introducing bias. In this experiment Alexa ranked word (or compound word) terms 4, 8 and 12 characters in length were selected. These are highly representative of typical queries and can be consistently corrupted at 25\%, such restrictions help reduce any bias. There were too few 16 character terms for them to be included as an additional set of seed terms.
 
-At each query length (4,8,12), 100 terms were generated from a number of seed terms with 25\% corruption ALG APP. Seed terms used for each length can be found in appendix BLAH. Accuracy is defined as the percentage of seed terms returned for their corresponding corrupted term. The search engine accuracy and term length are the independent and dependent variables respectively.
+At each query length (4, 8, 12), 100 terms were generated from a number of seed terms with 25\% corruption (Appendix 2). Seed terms used for each length can be found in Appendix 3. Accuracy is defined as the percentage of seed terms returned for their corresponding corrupted term. The search engine accuracy and term length are the independent and dependent variables respectively.
 
-To test the hypotheses, the search engine responses for the each of the 100 corrupted terms for each length will be recorded. The accuracies of each search engine at each word length will be compared. Should the differences in average accuracy be found to be significant (p < 0.05) between length then there will be reason to reject the null hypothesis \textit{H1}.
+To test the hypotheses, the search engine responses for the each of the 100 corrupted terms for each length will be recorded. The accuracies of each search engine at each word length will be compared. Should the differences in average accuracy be found to be significant (p \textless 0.05) between length then there will be reason to reject the null hypothesis \textbf{H1}.
 
-If the search engine accuracy difference is found to be significant (p < 0.05) then this will be cause to reject \textbf{H2}.
-
+If the search engine accuracy difference is found to be significant (p \textless 0.05) then this will be cause to reject \textbf{H2}.
 
 \section{Results}
 \label{sec:results}
@@ -129,6 +126,88 @@ I have conducted an experiment to test...
 
 What are the implications of the results? What do they mean at a higher level?
 
+\raggedbottom
 \bibliography{myrefs}
+
+\pagebreak
+\raggedbottom
+\section{Appendix 1: Seed Terms}
+\textbf{Four Letter Seeds}
+\textit{\{Ebay, Bing, Imdb, Etsy, Yelp, Cnet, Vice, Ikea, 9gag, Hulu, Dell, Citi, Asos, Java\}}
+
+\noindent
+\textbf{Eight Letter Seeds}
+\textit{\{Linkedin, Blogspot, Flipkart, Outbrain, Buzzfeed, Whatsapp, Softonic, Usatoday, Mashable, Engadget, Gsmarena, Evernote, Theverge\}}
+
+\noindent
+\textbf{Twelve Letter Seeds}
+\textit{{Spaceshipads, Secureserver, Shutterstock, Espncricinfo, Steampowered, Mercadolivre, Extratorrent, Liveinternet, Infusionsoft, Surveymonkey}}
+
+\pagebreak
+\raggedbottom
+\section{Appendix 2: Corruption Algorithm}
+  \begin{verbatim}
+    define corrupt(string, count, substitution_map)
+      string = string to downcase
+      indexes = range(1 to string.length) in random order
+
+      loop count times
+        index_to_corrupt = indexes.pop
+        character_to_corrupt = string[index_to_corrupt]
+        possible_replacements = substitution_map[character_to_corrupt]
+        replacement_character = random element from possible_replacements
+        string[index_to_corrupt] = replacement_character
+      end
+
+      return string
+    end
+  \end{verbatim}
+
+\pagebreak
+\section{Appendix 3: Letter Substitutions}
+\begin{multicols}{2}
+  \begin{verbatim}
+  a : {q w s z `}
+  b : {v g h n}
+  c : {x d f v}
+  d : {s e r f c x}
+  e : {w 3 4 r d s}
+  f : {d r t g v c}
+  g : {f t y h b v}
+  h : {g y u j n b}
+  i : {u 8 9 o k j}
+  j : {h u i k m n}
+  k : {j i o l , m}
+  l : {k o p ; . ,}
+  m : {n j k ,}
+  n : {b h j m}
+  o : {i 9 0 p l k}
+  p : {o 0 - [ ; l}
+  q : {1 2 w a}
+  r : {e 4 5 t f d}
+  s : {a w e d x z}
+  t : {r 5 6 y g f}
+  u : {y 7 8 i j h}
+  v : {c f g b}
+  w : {q 2 3 e s a}
+  x : {z s d c}
+  y : {t 6 7 u h g}
+  z : {` a s x}
+  . : {, l ; /}
+  ! : {@ 2 1 q §}
+  0 : {- p o 9}
+  1 : {§ q 2}
+  2 : {1 q w 3}
+  3 : {2 w e 4}
+  4 : {3 e r 5}
+  5 : {4 r t 6}
+  6 : {5 t y 7}
+  7 : {6 y u 8}
+  8 : {7 u i 9}
+  9 : {8 i o 0}
+  - : {0 p [ =}
+  \end{verbatim}
+\end{multicols}
+
 
 \end{document}

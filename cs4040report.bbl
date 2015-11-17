@@ -1,10 +1,22 @@
 \begin{thebibliography}{1}
 
+\bibitem{alexatop500}
+Alexa.
+\newblock The top 500 sites on the web.
+\newblock \url{http://www.alexa.com/topsites}, 2015.
+\newblock Accessed: 14th Nov.
+
 \bibitem{Burnett}
 C.~Burnett, T.~J. Norman, and K.~Sycara.
 \newblock Stereotypical trust and bias in dynamic multi-agent systems.
 \newblock {\em ACM Transactions on Intelligent Systems and Technology},
   4(2):26:1--26:22, 2013.
+
+\bibitem{scraper}
+Charlie~F. Egan.
+\newblock Sirjest.
+\newblock \url{https://github.com/charlieegan3/sirjest}, 2015.
+\newblock Accessed: 17th Nov.
 
 \bibitem{p2pbookv2}
 Ian J. Taylor \&~Andrew Harrison.
@@ -16,5 +28,12 @@ Wikipedia.
 \newblock Peer-to-peer networks.
 \newblock \url{http://en.wikipedia.org/wiki/Peer-to-peer}, 2009.
 \newblock Accessed: 1st May, 2015.
+
+\bibitem{searchenginewiki}
+Wikipedia.
+\newblock List of search engines: General.
+\newblock \url{https://en.wikipedia.org/wiki/List_of_search_engines#General},
+  2015.
+\newblock Accessed: 17th Nov.
 
 \end{thebibliography}
