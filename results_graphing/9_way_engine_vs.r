@@ -3,7 +3,6 @@ require(gridExtra)
 
 library(scales)
 
-mtcars = read.csv(file="mtcars.csv", header=TRUE, sep=";")
 table = read.csv(file="engine_result.tsv", header=TRUE, sep="\t")
 attach(table)
 
