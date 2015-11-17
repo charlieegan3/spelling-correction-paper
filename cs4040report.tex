@@ -48,15 +48,24 @@ question.
 
 Guide length: 500 words.
 
-Here is clearly much work being done in the space of spelling correction automation, implementations used by search engine companies are closed source and little is known of the specifics CHECK. One aim of this project is to investigate these system to see what can be inferred about their implementation. The research questions for the project are as follows:
+Here is clearly much work being done in the space of spelling correction automation, implementations used by search engine companies are closed source and little is known of the specifics CHECK. One aim of this project is to investigate these systems to see what can be inferred about their implementation and whether or not they differ. The research questions for the project are as follows:
 
 \begin{itemize}
-  \item{}
+  \item{What is the effect of query length on the suggestion accuracy for a given rate of corruption?}
+  \item{Is there a significant difference between search engines?}
 \end{itemize}
 
-"intro why asking questions", "the questions are as follows", "At which point does", and as a second "is there a significant difference between the search engines"
+To address these questions the prediction accuracy for a number of search engines will be compared when queried with corrupted terms of various lengths. Each search engine will be tested with the same set of corrupted terms and the accuracy of their return predictions recorded.
 
-"in order to answer this", "overview", explanation of tools
+The following search engines will be tested: \textit{Ask, Baidu, Bing, DuckDuckGo, Google...}. These non-aggregating search engines all offer suggestions for misspelled queries. A parallel scraper has been implemented to collect the results of each for a given query. Five instances of this scraper will be deployed to disposable environments on the Heroku PaaS.
+
+The terms used to derive corruptions are .com website names of a given length selected from the Alexa 500, seed terms are listed in appendix BLAH. Brands either four, eight or twelve characters in length were selected to allow a constant corruption rate of 25\% to be applied. Longer seeds were excluded to ensure predominantly single word brands were used.
+
+Corruptions will be generated from seed terms using a simple substitution algorithm, see appendix BLAH. A corruption is applied by selecting a random, uncorrupted character and replacing it with an adjacent key on the keyboard to simulate typographical errors. Transformations, as based on the US (UK Macintosh) keyboard, are listed in appendix BLAH.
+
+In related work, spelling correction system performance is commonly assessed using accuracy, alongside Precision and Recall. In this experiment where all queries are of single class, corrupted at 25\%, only Accuracy is compared. That is, for a given query set, what percentage of of corrupted queries cause the search engine to return the seed term. Given their rarity, collisions of corrupted spellings and other queries are assumed to be non-existent.
+
+variables, how controlled etc
 
 "the datasets...", explain how generated, how controlled, list all the variables in the data (suggested in the design section)
 
