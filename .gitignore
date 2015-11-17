@@ -3,3 +3,7 @@ run.txt
 output.tsv
 next.txt
 cs4040report.pdf
+results_graphing/len_vs_acc.pdf
+results_graphing/eng_vs_acc.pdf
+results_graphing/eng_vs_acc_9_way.pdf
+

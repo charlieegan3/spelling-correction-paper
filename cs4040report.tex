@@ -39,54 +39,42 @@ Not only is calculating edit distances for an string against terms large diction
 \section{Research question}
 \label{sec:rq}
 
-Given the problem context (Section~\ref{sec:intro}) and background
-(Section~\ref{sec:lit}), you should now be in a position to present
-what you have investigated. \textbf{Pose this as a question.}
-
-Then you should present your approach to addressing this
-question.
-
-Guide length: 500 words.
-
 Here is clearly much work being done in the space of spelling correction automation, implementations used by search engine companies are closed source and little is known of the specifics CHECK. One aim of this project is to investigate these systems to see what can be inferred about their implementation and whether or not they differ. The research questions for the project are as follows:
 
 \begin{itemize}
   \item{What is the effect of query length on the suggestion accuracy for a given rate of corruption?}
-  \item{Is there a significant difference between search engines?}
+  \item{Is there a significant difference in prediction accuracy between search engines?}
 \end{itemize}
 
-To address these questions the prediction accuracy for a number of search engines will be compared when queried with corrupted terms of various lengths. Each search engine will be tested with the same set of corrupted terms and the accuracy of their return predictions recorded.
+To address these questions the prediction accuracy for a number of search engines will be compared when queried with corrupted terms of various lengths. Each search engine will be tested with the same set of corrupted terms and the accuracy of their returned predictions recorded.
 
-The following search engines will be tested: \textit{Ask, Baidu, Bing, DuckDuckGo, Google...}. These non-aggregating search engines all offer suggestions for misspelled queries. A parallel scraper has been implemented to collect the results of each for a given query. Five instances of this scraper will be deployed to disposable environments on the Heroku PaaS.
+The following search engines will be tested: \textit{Ask, Baidu, Bing, DuckDuckGo, Google, Sogou, Yahoo, Yandex and Youdao}. These non-aggregating search engines all offer suggestions for misspelled queries. A parallel scraper GITHUB has been implemented to collect the results of each for a given query. Five instances of this scraper will be deployed to disposable environments on the Heroku PaaS and requests made against each to gather results from a local script.
 
-The terms used to derive corruptions are .com website names of a given length selected from the Alexa 500, seed terms are listed in appendix BLAH. Brands either four, eight or twelve characters in length were selected to allow a constant corruption rate of 25\% to be applied. Longer seeds were excluded to ensure predominantly single word brands were used.
+The terms selected to derive corruptions will be .com website names of a given length selected from the Alexa Top 500 ALEXA, these seed terms are listed in appendix BLAH. Brand names that are either four, eight or twelve characters in length were selected to allow a constant corruption rate of 25\% to be applied. Longer word seeds were few and were excluded to ensure predominantly single word brands names were used.
 
-Corruptions will be generated from seed terms using a simple substitution algorithm, see appendix BLAH. A corruption is applied by selecting a random, uncorrupted character and replacing it with an adjacent key on the keyboard to simulate typographical errors. Transformations, as based on the US (UK Macintosh) keyboard, are listed in appendix BLAH.
+Corruptions will be generated from seed terms using a substitution algorithm, see appendix BLAH. A corruption is applied by selecting a random, uncorrupted character and substituting it with an adjacent key on the keyboard to simulate typographical errors. Transformations, as based on the US (UK Macintosh) keyboard, are listed in appendix BLAH. Insertions of additional letters, letter deletions and transpositions will not be included to ensure consistency.
 
-In related work, spelling correction system performance is commonly assessed using accuracy, alongside Precision and Recall. In this experiment where all queries are of single class, corrupted at 25\%, only Accuracy is compared. That is, for a given query set, what percentage of of corrupted queries cause the search engine to return the seed term. Given their rarity, collisions of corrupted spellings and other queries are assumed to be non-existent.
-
-variables, how controlled etc
-
-"the datasets...", explain how generated, how controlled, list all the variables in the data (suggested in the design section)
-
-How the results are recorded and on what they will be compared (precision recall), or use accuracy? Need to explain why, accuracy might be appropriate for my experiment. This is a summary of the following section. High level parameters for the tools and generally how the subject are compared.
+In related work, spelling correction system performance is commonly assessed using Accuracy, alongside both Precision and Recall. In this experiment where, all queries are of single class, corrupted at 25\%, search engines will be compared on their \textit{Accuracy}. That is, for a given query set, what percentage of of corrupted queries cause the search engine to return the seed term. Given their rarity, collisions of corrupted spellings with other uncorrupted queries are assumed to be insignificant.
 
 \section{Experimental Design}
 \label{sec:exp}
 
-What are your hypotheses? How are you going to test them? What is your
-target population? What are your datasets; i.e.\ your sample of the
-target population. What are the dependent and independent variables?
-
-Guide length: 500 words.
-
-first state the null hyps, one per question it seems, "significantly different" is the phrase to use it seems. can also state the alternatives if they are not clear.
-
 detail test data and give justification for decisions
 
-"To test these hyps [what happens in the experiement]", "this was then repeated for each..."
+The null hypotheses for the experiment are as follows:
+\begin{itemize}
+  \item{At a constant rate of corruption, accuracy is not significantly affected by the query length in characters. (H1)}
+  \item{Search engines do not differ significantly in their average accuracy for a range of query lengths. (H2)}
+\end{itemize}
 
-talk about the datasets that will be used. talk about the variables ()
+The target population is all search terms that are the result of one or more typographical corruptions. Due to search engine rate-limiting and time constraints it is infeasible to test these in large numbers. Random seed terms such as strings of words would not be representative of real world queries. A consistent collection of realistic query phrases is challenging to generate without introducing bias. In this experiment Alexa rank word or compound word terms 4, 8 and 12 characters in length were selected. These are highly representative of typical queries and can be consistently corrupted at 25\%, such restrictions help reduce any bias. There were too few 16 character terms for them to be included as an additional set of seed terms.
+
+At each query length (4,8,12), 100 terms were generated from a number of seed terms with 25\% corruption ALG APP. Seed terms used for each length can be found in appendix BLAH. Accuracy is defined as the percentage of seed terms returned for their corresponding corrupted term. The search engine accuracy and term length are the independent and dependent variables respectively.
+
+To test the hypotheses, the search engine responses for the each of the 100 corrupted terms for each length will be recorded. The accuracies of each search engine at each word length will be compared. Should the differences in average accuracy be found to be significant (p < 0.05) between length then there will be reason to reject the null hypothesis \textit{H1}.
+
+If the search engine accuracy difference is found to be significant (p < 0.05) then this will be cause to reject \textbf{H2}.
+
 
 \section{Results}
 \label{sec:results}
