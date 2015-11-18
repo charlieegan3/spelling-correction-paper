@@ -83,23 +83,29 @@ If the search engine accuracy difference is found to be significant (p \textless
 \section{Results}
 \label{sec:results}
 
-Present the results. A good way to organise this is via subsections
+Present the results. A good way to organize this is via subsections
 for each hypothesis you tested. Include graphs of results
-, tests of significance, etc. If you have
-negative results, include them. A negative results is just as
-informative and useful as a positive one, sometimes more so.
+, tests of significance, etc.
 
 Guide length: 500 words.
 
-table of the results in summary, same sentence ref a graph of the table.
+The results suggest that all decreased in accuracy as the number of corruptions increased. Also x did better then y - quote values to support / highlight things in the table
 
-the results suggest that all decreased in accuracy as the number of corruptions increased. Also x did better then y - quote values to support / highlight things in the table
-
-then do a section for each comparison and hypothesis / quesion 5.1 5.2 - say was was and was not significant, in response to the question. Quote those p values!
+Then do a section for each comparison and hypothesis / question 5.1 5.2 - say was was and was not significant, in response to the question. Quote those p values!
 
 Segment the section based on the number of questions, accuracy vs speed etc. for each quote the values of the statistical tests.
 
-quote the p values and the difference in the results from the tukey HSD
+Quote the p values and the difference in the results from the tukey HSD
+
+\begin{figure}
+  \centerline{\includegraphics[width=4in]{len_vs_acc}}
+  \caption{Mean search engine accuracy for each query length}\label{fig:lengths}
+\end{figure}
+
+\begin{figure}
+  \centerline{\includegraphics[width=4in]{eng_vs_acc}}
+  \caption{Mean accuracies over all query lengths}\label{fig:searchengines}
+\end{figure}
 
 \section{Discussion}
 \label{sec:discuss}
@@ -216,5 +222,11 @@ What are the implications of the results? What do they mean at a higher level?
   \end{verbatim}
 \end{multicols}
 
+
+\section{Appendix 4: Detailed Search Engine Plot}
+\begin{figure}
+  \centerline{\includegraphics[width=\textwidth]{eng_vs_acc_9_way}}
+  \caption{Accuracies for each length of each search engine compared}\label{fig:9searchengines}
+\end{figure}
 
 \end{document}
