@@ -1,5 +1,5 @@
 \documentclass{csfourzero}
-\usepackage{url, natbib, upquote, multicol}
+\usepackage{url, natbib, upquote, multicol, caption, subcaption}
 
 \title{The effect of corruption on search engine query prediction}
 \author{Charlie F.\ Egan}
@@ -98,14 +98,22 @@ Segment the section based on the number of questions, accuracy vs speed etc. for
 Quote the p values and the difference in the results from the tukey HSD
 
 \begin{figure}
-  \centerline{\includegraphics[width=4in]{len_vs_acc}}
-  \caption{Mean search engine accuracy for each query length}\label{fig:lengths}
+  \centering
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{len_vs_acc}
+    \captionof{figure}{Mean search engine accuracy for each query length}
+    \label{fig:lengths}
+  \end{minipage}%
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{eng_vs_acc}
+    \captionof{figure}{Mean accuracies over all query lengths}
+    \label{fig:searchengines}
+  \end{minipage}
 \end{figure}
 
-\begin{figure}
-  \centerline{\includegraphics[width=4in]{eng_vs_acc}}
-  \caption{Mean accuracies over all query lengths}\label{fig:searchengines}
-\end{figure}
+Figure~\ref{fig:lengths} shows the average for all nine search engines for each query length. Figure~\ref{fig:searchengines} shows the average accuracy over all query length for each search engine. Error bars in both figures represent standard errors.
 
 \section{Discussion}
 \label{sec:discuss}
