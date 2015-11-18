@@ -81,6 +81,11 @@ Peter Norvig.
 \newblock \url{http://www.norvig.com/spell-correct.html}, 2015.
 \newblock Accessed: 17th Nov.
 
+\bibitem{jameslpeterson1980beginning}
+James~L. Peterson.
+\newblock Computer programs for detecting and correcting spelling errors.
+\newblock {\em COMPUTING PRACTICES}, 23(12):677, dec 1980.
+
 \bibitem{claudeshannon1948}
 Claude Shannon.
 \newblock A mathematical theory of communication.
@@ -89,6 +94,13 @@ Claude Shannon.
 \bibitem{noampatent}
 Noam Shazeer.
 \newblock \url{http://www.google.co.uk/patents/US8051374}.
+
+\bibitem{microphone}
+Kristina Toutanova and Robert~C Moore.
+\newblock Pronunciation modeling for improved spelling correction.
+\newblock In {\em Proceedings of the 40th Annual Meeting on Association for
+  Computational Linguistics}, pages 144--151. Association for Computational
+  Linguistics, 2002.
 
 \bibitem{webuser4google2009}
 Casey Whitelaw, Ben Hutchinson, Grace~Y Chung, and Gerard Ellis.
