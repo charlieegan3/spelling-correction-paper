@@ -1,5 +1,12 @@
 \begin{thebibliography}{10}
 
+\bibitem{webuser2learningerrormodel}
+Farooq Ahmad and Grzegorz Kondrak.
+\newblock Learning a spelling error model from search query logs.
+\newblock In {\em Proceedings of the conference on Human Language Technology
+  and Empirical Methods in Natural Language Processing}, pages 955--962.
+  Association for Computational Linguistics, 2005.
+
 \bibitem{alexatop500}
 Alexa.
 \newblock The top 500 sites on the web.
@@ -42,6 +49,14 @@ Charlie~F. Egan.
 \newblock \url{https://github.com/charlieegan3/sirjest}, 2015.
 \newblock Accessed: 17th Nov.
 
+\bibitem{microranker}
+Jianfeng Gao, Xiaolong Li, Daniel Micol, Chris Quirk, and Xu~Sun.
+\newblock A large scale ranker-based system for search query spelling
+  correction.
+\newblock In {\em Proceedings of the 23rd International Conference on
+  Computational Linguistics}, pages 358--366. Association for Computational
+  Linguistics, 2010.
+
 \bibitem{originalnoisychannel}
 Mark~D. Kernighan, Kenneth~W. Church, and William~A. Gale.
 \newblock A spelling correction program based on a noisy channel model.
@@ -65,6 +80,11 @@ Peter Norvig.
 \newblock How to write a spelling corrector.
 \newblock \url{http://www.norvig.com/spell-correct.html}, 2015.
 \newblock Accessed: 17th Nov.
+
+\bibitem{claudeshannon1948}
+Claude Shannon.
+\newblock A mathematical theory of communication.
+\newblock {\em Bell System Technical Journal}, 27(3):379--423, dec 1948.
 
 \bibitem{noampatent}
 Noam Shazeer.
