@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{alexatop500}
 Alexa.
@@ -6,16 +6,53 @@ Alexa.
 \newblock \url{http://www.alexa.com/topsites}, 2015.
 \newblock Accessed: 14th Nov.
 
+\bibitem{betternoisychannel}
+Eric Brill and Robert~C. Moore.
+\newblock An improved error model for noisy channel spelling correction.
+\newblock In {\em Proceedings of the 38th Annual Meeting on Association for
+  Computational Linguistics}, ACL '00, pages 286--293, Stroudsburg, PA, USA,
+  2000. Association for Computational Linguistics.
+
+\bibitem{webuser3}
+Qing Chen, Mu~Li, and Ming Zhou.
+\newblock Improving query spelling correction using web search results.
+\newblock In {\em EMNLP-CoNLL}, volume~7, pages 181--189. Citeseer, 2007.
+
 \bibitem{introIR}
 Hinrich~Schütze Christopher D.~Manning, Prabhakar~Raghavan.
 \newblock {\em An Introduction to Information Retrieval, Section 3.3.3, p57}.
 \newblock Cambridge UP, 2009.
+
+\bibitem{webuserpoweredspelling}
+Silviu Cucerzan and Eric Brill.
+\newblock Spelling correction as an iterative process that exploits the
+  collective knowledge of web users.
+\newblock In {\em EMNLP}, volume~4, pages 293--300, 2004.
+
+\bibitem{2009adaptivespellchecker}
+Renato~Cordeiro de~Amorim.
+\newblock An adaptive spell checker based on ps3m: Improving the clusters of
+  replacement words.
+\newblock In {\em Computer Recognition Systems 3}, pages 519--526. Springer,
+  2009.
 
 \bibitem{scraper}
 Charlie~F. Egan.
 \newblock Sirjest.
 \newblock \url{https://github.com/charlieegan3/sirjest}, 2015.
 \newblock Accessed: 17th Nov.
+
+\bibitem{originalnoisychannel}
+Mark~D. Kernighan, Kenneth~W. Church, and William~A. Gale.
+\newblock A spelling correction program based on a noisy channel model.
+\newblock In {\em Proceedings of the 13th Conference on Computational
+  Linguistics - Volume 2}, COLING '90, pages 205--210, Stroudsburg, PA, USA,
+  1990. Association for Computational Linguistics.
+
+\bibitem{1992correctiondiscussion}
+Karen Kukich.
+\newblock Techniques for automatically correcting words in text.
+\newblock {\em ACM Comput. Surv.}, 24(4):377--439, December 1992.
 
 \bibitem{levenshtein1966binary}
 Vladimir~I Levenshtein.
@@ -32,6 +69,14 @@ Peter Norvig.
 \bibitem{noampatent}
 Noam Shazeer.
 \newblock \url{http://www.google.co.uk/patents/US8051374}.
+
+\bibitem{webuser4google2009}
+Casey Whitelaw, Ben Hutchinson, Grace~Y Chung, and Gerard Ellis.
+\newblock Using the web for language independent spellchecking and
+  autocorrection.
+\newblock In {\em Proceedings of the 2009 Conference on Empirical Methods in
+  Natural Language Processing: Volume 2-Volume 2}, pages 890--899. Association
+  for Computational Linguistics, 2009.
 
 \bibitem{searchenginewiki}
 Wikipedia.
