@@ -1,3 +1,5 @@
+rm *.bbl
+rm *.aux
 pdflatex cs4040report
 bibtex cs4040report
 pdflatex cs4040report
