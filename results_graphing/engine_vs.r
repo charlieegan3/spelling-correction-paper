@@ -24,7 +24,9 @@ ggplot(data.summary, aes(x = treatment, y = mean)) +
   ylab("Mean Accuracy (with Standard Errors)") +
   xlab("") +
   scale_y_continuous(labels=percent, limits = c(0,0.3)) +
-  scale_x_discrete(breaks=c("ask","baidu","bing","duckduckgo","google","sogou","yahoo","yandex","youdao"), labels=c("Ask", "Baidu", "Bing", "DuckDuckGo", "Google", "Sogou", "Yahoo", "Yandex", "Youdao")) +
-  theme(axis.text.x = element_text(size=8))
+  scale_x_discrete(breaks=c("ask","baidu","bing","duckduckgo","google","sogou","yahoo","yandex","youdao"), labels=c("Ask", "Baidu", "Bing", "DDG", "Google", "Sogou", "Yahoo", "Yandex", "Youdao")) +
+  theme(axis.text.x = element_text(size=13), axis.text.y = element_text(size=13)) +
+  theme(axis.title.y = element_text(size=17)) +
+  theme(title = element_text(size=15))
 
 dev.off()

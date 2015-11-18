@@ -24,6 +24,9 @@ ggplot(data.summary, aes(x = treatment, y = mean)) +
   ylab("Mean Accuracy (with Standard Errors)") +
   xlab("") +
   scale_y_continuous(labels=percent, limits = c(0,0.3)) +
-  scale_x_discrete(limits=c("4 chars","8 chars","12 chars"))
+  scale_x_discrete(limits=c("4 chars","8 chars","12 chars")) +
+  theme(axis.text.x = element_text(size=15), axis.text.y = element_text(size=13)) +
+  theme(axis.title.y = element_text(size=17)) +
+  theme(title = element_text(size=15))
 
 dev.off()
