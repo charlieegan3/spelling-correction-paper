@@ -1,3 +1,4 @@
+rm cs4040report.pdf
 rm *.bbl
 rm *.aux
 pdflatex cs4040report
