@@ -116,20 +116,19 @@ DuckDuckGo returned the most accurate corrections overall. Bing and Google where
 \section{Discussion}
 \label{sec:discuss}
 
-What do the results say? What have you learned from the
-experiments? Have you identified a correlation between variables, or
-causation? What are the limitations of what you've done? What further
-experiments might be of benefit?
+The results appear to suggest that length does impact correction accuracy, when other variables remain constant. This pattern was consistent across all but one search engine. This would suggest that spelling correction implementations are better suited to shorter query terms. Also, more generally, that error correction of corrupted terms from an error prone channel is more successful for shorter strings.
 
-Guide length: 400 words.
+A secondary finding, that search engines differ in their correction accuracy is also of interest. This shows that each are likely using substantially different implementations. It is also of interest that greater query volume is not required to for best-in-class performance. Google performed worse than DuckDuckGo handing more than 20 times the number of queries SOURCE. This would suggest that, despite an apparent trend towards using user activity to train error models \cite{webuserpoweredspelling, webuser3, webuser2learningerrormodel, webuser4google2009}, it is not the only requirement for a high performing, error correction implementation. It is also possible that a critical point exists where more behavioral data yields little benefit.
 
-results summary, state the relationships at a high level, make references to the values of the tests mean stdev etc.
+issues
+The most apparent bias in the study is introduced by the inclusion of both Asian and US search engines. This was done to give sufficient data for each query length - including additional query lengths would have introduced further bias (inconsistent error rate or word count). Seed terms did include Asian but the ratio is not comparable to 5:4 US Asia split for search engines.
 
-limitations of the study. limited in data and tools compared. talk about any bias, are my typos real for instance? likely not.
+Error generation was also strictly controlled to minimise bias in the length comparison. The algorithm in Appendix 2 is a compromise and is intended to represent `realistic' typographical errors. Real error models are more representative - but in turn less controlled. Real word errors as well as insertions, deletions and transposition are not covered in this study. A similar comparison based on error types would be interesting.
 
-How to do it better next time, make better representation of the population, big pg on what was missed and how this might be an issue.
+Brand names were selected seed terms as they are likely to be consistently well ranked. However, they do not allow for a wide range in query lengths without introducing potential bias from word count differences. A repeat study that used a wider range of query lengths would be make for a good comparison. Wikipedia article titles were considered for this study.
 
-Keep it general - what does the data tell us about search engines in general?
+The experiment design was focused on testing \textbf{H1}. A more detailed, search engine centric, comparison would include a wider range of query types and errors as detailed above. This study was based on `Did you mean' prompts, another more realistic metric might be checking the relevance of the first result for a given corrupted query.
+
 
 \section{Conclusion}
 \label{sec:conc}
