@@ -83,18 +83,6 @@ If the search engine accuracy difference is found to be significant (p \textless
 \section{Results}
 \label{sec:results}
 
-Present the results. A good way to organize this is via subsections
-for each hypothesis you tested. Include graphs of results
-, tests of significance, etc.
-
-Guide length: 500 words.
-
-The results suggest that all decreased in accuracy as the number of corruptions increased. Also x did better then y - quote values to support / highlight things in the table
-
-Then do a section for each comparison and hypothesis / question 5.1 5.2 - say was was and was not significant, in response to the question. Quote those p values!
-
-Quote the p values and the difference in the results from the tukey HSD
-
 \begin{figure}
   \centering
   \begin{minipage}{.5\textwidth}
@@ -116,14 +104,14 @@ Figure~\ref{fig:lengths} shows the average for all nine search engines for each 
 The results suggest that correction accuracy decreases as the query length increases. The effect is most apparent for 12 character queries. While queries 4 and 8 characters in length have more similar accuracy values there still appears to be a difference. The results also show a clear difference in search engine correction accuracy performance. Surprisingly, DuckDuckGo returned the most accurate predictions, performing 11\% above average and 23\% above Yandex, the poorest performing engine. DuckDuckGo is the search engine with the second lowest Alexa rank of those under test. Also of note was the difference between 4 and 8 characters for Google - it was the only search engine to perform better on 8 character queries.
 
 \subsection{Term length comparison}
-An f-test was performed for the results of all search engines at the each of the 3 query lengths to make a comparison to the null hypothesis \textbf{H1}. The result, $\big((F_{2,24}) = 3.53, p = 0.045\big)$, allows the null hypothesis to be rejected at the 95\% confidence interval.
+Average correction accuracy was calculated using 900 query results from from all search engines. This was calculated for each of the 3 lengths and plotted in Figure~\ref{fig:lengths}, errors shown are the standard error in the mean. Using these results, an f-test was performed to make a comparison with the first null hypothesis \textbf{H1}, that length has no effect on the correction accuracy. The result, $\big((F_{2,24}) = 3.53, p = 0.045\big)$, allows this null hypothesis to be rejected at the 95\% confidence interval as the difference between lengths was shown to be significant.
 
-Given that query length has a significant effect on corrector accuracy a Tukey's HSD test was also performed to investigate the differences between the 3 lengths under test. Only the 4 against 12 character gave a result within the 95\% confidence interval $\big(p = 0.038\big)$. Comparisons between adjacent groups were not found to be significant. Both 4-8, and 8-12 pairwise comparisons resulted in values for $p > 0.2$, $0.64$ and $0.22$ respectively. It is possible that a significantly larger sample would expose a significant difference in these additional comparisons across all search engines, the trend was that shorter terms were better corrected for all but one search engine.
+Given that query length has a significant effect on corrector accuracy a Tukey's HSD test was also carried out to closer investigate differences in the means of the 3 lengths. Only the 4 vs 12 character comparison gave a result within the 95\% confidence interval $\big(p = 0.038\big)$. Comparisons between adjacent groups were not found to be significant on the data gathered in this project. Both 4-8, and 8-12 pairwise comparisons resulted in values for $p > 0.2$, $0.64$ and $0.22$ respectively. A larger sample would further refine these values and could reveal a significant difference, however given the low scores it would need to be a large increase. The trend was that shorter terms had a better rate of correction with the biggest difference being between the samples for 8 and 12 character queries.
 
 \subsection{Search engine comparison}
-Similarly, an f-test was performed to test for differences between each of the individual search engines under test across all lengths. This gave a stronger result $\big((F_{8,18}) = 4.576, p = 0.0035\big)$ and justifies rejection of the second null hypothesis \textbf{H2}.
+Using the same data collected for the query length question it was also possible to also make a comparison between each search engine. All results for each query length were averaged and plotted with standard errors in the mean in Figure~\ref{fig:searchengines}. An f-test then was performed to examine differences between each individual search engine, across all three lengths. This gave a strong result $\big((F_{8,18}) = 4.576, p = 0.0035\big)$ and justifies rejection of the second null hypothesis \textbf{H2}, that all search engines are equally capable of correction for corrupted user queries.
 
-Needs additional information.
+DuckDuckGo returned the most accurate corrections overall. Bing and Google where close on 4 and 8 characters respectively with 8 characters interestingly being the best Google result. Yandex had the poorest correction rate and failed to correct any queries in the 12 character sample, Ask also only returned a single correction for this sample. Please see Appendix 4 for a combined plot comparing the 9 search engine correction accuracy rates at each length.
 
 \section{Discussion}
 \label{sec:discuss}
