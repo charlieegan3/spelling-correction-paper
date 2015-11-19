@@ -12,5 +12,6 @@ tapply(result, groupFactor, summary)
 engineAnova = aov(result ~ groupFactor)
 detach(table_engine)
 
+summary(lengthAnova)
 TukeyHSD(lengthAnova)
 summary(engineAnova)

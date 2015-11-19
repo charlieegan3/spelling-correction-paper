@@ -93,8 +93,6 @@ The results suggest that all decreased in accuracy as the number of corruptions 
 
 Then do a section for each comparison and hypothesis / question 5.1 5.2 - say was was and was not significant, in response to the question. Quote those p values!
 
-Segment the section based on the number of questions, accuracy vs speed etc. for each quote the values of the statistical tests.
-
 Quote the p values and the difference in the results from the tukey HSD
 
 \begin{figure}
@@ -118,6 +116,9 @@ Figure~\ref{fig:lengths} shows the average for all nine search engines for each 
 The results suggest that correction accuracy decreases as the query length increases. The effect is most apparent for 12 character queries. While queries 4 and 8 characters in length have more similar accuracy values there still appears to be a difference. The results also show a clear difference in search engine correction accuracy performance. Surprisingly, DuckDuckGo returned the most accurate predictions, performing 11\% above average and 23\% above Yandex, the poorest performing engine. DuckDuckGo is the search engine with the second lowest Alexa rank of those under test. Also of note was the difference between 4 and 8 characters for Google - it was the only search engine to perform better on 8 character queries.
 
 \subsection{Term length comparison}
+An f-test was performed for the results of all search engines at the each of the 3 query lengths to make a comparison to the null hypothesis \textbf{H1}. The result, $\big((F_{2,24}) = 3.53, p = 0.045\big)$, allows the null hypothesis to be rejected at the 95\% confidence interval.
+
+Given that query length has a significant effect on corrector accuracy a Tukey's HSD test was also performed to investigate the differences between the 3 lengths under test. Only the 4 against 12 character gave a result within the 95\% confidence interval $\big(p = 0.038\big)$. Comparisons between adjacent groups were not found to be significant. Both 4-8, and 8-12 pairwise comparisons resulted in values for $p > 0.2$, $0.64$ and $0.22$ respectively. It is possible that a significantly larger sample would expose a significant difference in these additional comparisons across all search engines, the trend was that shorter terms were better corrected for all but one search engine.
 
 \subsection{Search engine comparison}
 
