@@ -1,5 +1,5 @@
 \documentclass{csfourzero}
-\usepackage{url, natbib, upquote, multicol, caption, subcaption}
+\usepackage{url, natbib, upquote, multicol, caption, subcaption, float}
 
 \title{The effect of corruption on search engine query prediction}
 \author{Charlie F.\ Egan}
@@ -195,6 +195,7 @@ What are the implications of the results? What do they mean at a higher level?
   \end{verbatim}
 
 \pagebreak
+\raggedbottom
 \section{Appendix 3: Letter Substitutions}
 \begin{multicols}{2}
   \begin{verbatim}
@@ -241,8 +242,9 @@ What are the implications of the results? What do they mean at a higher level?
 \end{multicols}
 
 
+\pagebreak
 \section{Appendix 4: Detailed Search Engine Plot}
-\begin{figure}
+\begin{figure}[H]
   \centerline{\includegraphics[width=\textwidth]{eng_vs_acc_9_way}}
   \caption{Accuracies for each length of each search engine compared}\label{fig:9searchengines}
 \end{figure}
