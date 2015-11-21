@@ -1,5 +1,5 @@
 \documentclass{csfourzero}
-\usepackage{url, natbib, upquote, multicol, caption, subcaption, float}
+\usepackage{url, natbib, upquote, multicol, caption, subcaption, float, algorithmicx, algpseudocode}
 \setlength{\bibsep}{0pt plus 0.3ex}
 
 \title{The effect of corruption on search engine query correction}
@@ -155,22 +155,21 @@ This study investigated the effect of query length on error correction accuracy 
 \pagebreak
 \raggedbottom
 \section{Appendix 2: Corruption Algorithm}
-  \begin{verbatim}
-    define corrupt(string, count, substitution_map)
-      string = string to downcase
-      indexes = range(1 to string.length) in random order
-
-      loop count times
-        index_to_corrupt = indexes.pop
-        character_to_corrupt = string[index_to_corrupt]
-        possible_replacements = substitution_map[character_to_corrupt]
-        replacement_character = random element from possible_replacements
-        string[index_to_corrupt] = replacement_character
-      end
-
-      return string
-    end
-  \end{verbatim}
+  \begin{algorithmic}
+    \Function{corruptString}{$string$, $count$}
+        \State $string \gets downcase(string)$
+        \State $indexes \gets$ $\{ x \in \mathbb{Z} \ \vert \ 1 \leq x \leq length(string) \}$
+        \State $indexes \gets$ $randomOrder(indexes)$
+        \Repeat
+        \State $indexToCorrupt \gets pop(indexes)$
+        \State $characterToCorrupt \gets string[indexToCorrupt]$
+        \State $replacementCharacters \gets keyboardSubstitutionsForCharacter(characterToCorrupt)$
+        \State $string[indexToCorrupt] \gets randomElement(replacementCharacters)$
+        \State $count \gets count - 1$
+        \Until{count is 0}
+        \State \Return $string$
+    \EndFunction
+  \end{algorithmic}
 
 \pagebreak
 \raggedbottom
