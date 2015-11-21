@@ -15,3 +15,6 @@ detach(table_engine)
 summary(lengthAnova)
 TukeyHSD(lengthAnova)
 summary(engineAnova)
+
+bartlett.test(result ~ length, data=table)
+bartlett.test(result ~ engine, data=table)
