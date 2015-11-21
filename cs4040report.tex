@@ -75,7 +75,7 @@ The target population for the study is all probable user search queries that are
 
 At each query length (four, eight, twelve characters), 100 queries will be generated from the seeds (Appendix 1) with a constant 25\% corruption rate using the adjacent substitution algorithm in Appendix 2. Substations are applied once, twice and three times for four, eight and twelve character queries respectively - each index is only ever substituted once. For a given sample of corrupted queries, search engine accuracy is defined as: the percentage of queries in the sample for which the search engine returns the seed of the corrupted query as a correction on the results page. On this page, corrections are either present or missing, it is assumed that, since queries are single words, partial corrections are not possible. The search engine accuracy is the independent variable in all comparisons. Length and search engine are the dependent variables for the first and second questions respectively.
 
-\textbf{NEW \& Improved!} The statistical model ANOVA for fixed-effects will be used to analyse the results. Each query is made using a new session, it is assumed that search engines are also independent and that all observations made as part of the study are independent. The variation in differences from the sample means (residuals) at each length and for each search engine are assumed to be normally distributed. Similarly, variances in the groups under comparison are assumed to be equal.
+\textbf{required? also mentioned in results} The statistical tests ANOVA and Tukey's HSD will be used to analyse the results. Each query is made using a new session, it is also assumed that search engines serve results independently. The variation of differences from the sample mean accuracy (residuals) are assumed to be normally distributed. Additionally, variances in the groups under comparison are assumed to be equal.
 
 To test the hypotheses, the search engine responses for the each of the 100 corrupted queries for each of the three query lengths will be recorded. The combined accuracy of all search engines at each length will be tested for a group effect. Should the differences in average accuracy be significant $(p < 0.05)$ between lengths then there will be reason to reject the first null hypothesis \textbf{H1}.
 
@@ -104,13 +104,15 @@ Figure~\ref{fig:lengths} shows the average for all nine search engines for each 
 
 The results suggest that correction accuracy decreases as the query length increases. The effect is most apparent for twelve character queries. While queries four and eight characters in length have more similar accuracy values there still appears to be a difference. The results also show a clear difference in search engine correction accuracy performance. Surprisingly, DuckDuckGo returned the most accurate corrections, performing 11\% above average and 23\% above Yandex, the poorest performing engine. DuckDuckGo is the search engine with the second lowest Alexa rank of those under test. Also of note was the difference between four and eight characters for Google - it was the only search engine to perform better on eight character queries.
 
+One way ANOVAs were performed for hypothesis testing. Validation of the ANOVA (Tukey's HSD) assumptions for the data can be found in Appendix 5.
+
 \subsection{Term length comparison}
-Average correction accuracy was calculated using 900 query results from from all search engines. This was calculated for each of the 3 lengths and plotted in Figure~\ref{fig:lengths}, errors shown are the standard error in the mean. Using these results, an ANOVA was performed to make a comparison with the first null hypothesis \textbf{H1}, that length has no effect on the correction accuracy. The result, $\big((F_{2,24}) = 3.53, p = 0.045\big)$, allows this null hypothesis to be rejected at the 95\% confidence interval as the difference between lengths was shown to be significant.
+Average correction accuracy was calculated using 900 query results from from all search engines. This was calculated for each of the 3 lengths and plotted in Figure~\ref{fig:lengths}, errors shown are the standard error in the mean. Using these results, a one-way ANOVA was performed on accuracy and length to make a comparison with \textbf{H1}, that length has no effect on the correction accuracy. The result, $\big((F_{2,24}) = 3.53, p = 0.045\big)$, allows this null hypothesis to be rejected at the 95\% confidence interval as the difference between lengths was shown to be significant.
 
 Given that query length has a significant effect on corrector accuracy a Tukey's HSD test was also carried out to closer investigate differences in the means of the 3 lengths. Only the four vs twelve character comparison gave a result within the 95\% confidence interval $\big(p = 0.038\big)$. Comparisons between adjacent groups were not found to be significant on the data gathered in this project. Both four-eight, and eight-twelve pairwise comparisons resulted in values for $p > 0.2$, $0.64$ and $0.22$ respectively. A larger sample would further refine these values and could reveal a significant difference, however given the low scores it would need to be a large increase. The trend was that shorter queries had a better rate of correction with the biggest difference being between the samples for eight and twelve character queries.
 
 \subsection{Search engine comparison}
-Using the same data collected for the query length question it was also possible to also make a comparison between each search engine. All results for each query length were averaged and plotted with standard errors in the mean in Figure~\ref{fig:searchengines}. An ANOVA was then performed to examine differences between each individual search engine, across all three lengths. This gave a strong result $\big((F_{8,18}) = 4.576, p = 0.0035\big)$ and justifies rejection of the second null hypothesis \textbf{H2} at the 95\% confidence level.
+Using the same data collected for the query length question it was also possible to also make a comparison between each search engine. All results for each query length were averaged and plotted with standard errors in the mean in Figure~\ref{fig:searchengines}. A one-way ANOVA was performed on accuracy and search engine to examine the differences between each across all three lengths. This gave a strong result $\big((F_{8,18}) = 4.576, p = 0.0035\big)$ and justifies rejection of the second null hypothesis \textbf{H2} at the 95\% confidence level.
 
 DuckDuckGo returned the most accurate corrections overall. Bing and Google where close on four and eight characters respectively with eight characters interestingly being the best Google result. Yandex had the poorest correction rate and failed to correct any queries in the twelve character sample, Ask also only returned a single correction for this sample. Please see Appendix 4 for a combined plot comparing the 9 search engine correction accuracy rates at each length.
 
@@ -226,6 +228,24 @@ This study investigated the effect of query length on error correction accuracy 
 \begin{figure}[H]
   \centerline{\includegraphics[width=\textwidth]{eng_vs_acc_9_way}}
   \caption{Accuracies for each length of each search engine compared}\label{fig:9searchengines}
+\end{figure}
+
+\pagebreak
+\section{Appendix 5: ANOVA Assumption Validation}
+\subsection{Independence of Observations}
+Search engines are assumed to operate independently. Each query is made programmatically using a fresh session.
+
+\subsection{Equality of Variances}
+Bartlett K-squared results do not give cause to reject the test's null hypothesis, that the variances are equal. Results are as follows:
+\begin{itemize}
+  \item{\textbf{Length:} $\chi^2 = 0.63, p = 0.73 $}
+  \item{\textbf{Search Engine:} $\chi^2 = 6.23, p = 0.62 $}
+\end{itemize}
+
+\subsection{Normality}
+\begin{figure}[H]
+  \centerline{\includegraphics[width=0.7\textwidth]{residual_histogram}}
+  \caption{Distribution of accuracy residuals of for lengths and search engines}\label{fig:9searchengines}
 \end{figure}
 
 \end{document}
