@@ -8,7 +8,7 @@
 \date{\today}
 
 \bibliographystyle{plain}
-\abstract{Search engines are able to learn error correction from the behavior of their users. Rather than relying on a traditional spelling correction algorithms, user query patterns can be used to train tools and provide more accurate corrections as a result. This report investigates how corrupted input effects the correction accuracy of the system and well as how each in a number of top search engines compare in their ability to correct corrupted input - related work and concepts are also discussed. It was found that search engines differ significantly in their correction accuracy and that there is a relation between word length and correction performance.}
+\abstract{Search engines are able to improve query error correction using the behavior of their users. Rather than relying on a traditional spelling correction algorithms user query patterns can train tools to provide more accurate corrections. This report investigates the effect of corrupted input on a system's ability to offer accurate corrections. The correction performance of a number of common search engines is compared and related work and concepts discussed. It was found that search engines differ significantly in correction accuracy and that accuracy is affected by query length.}
 
 \begin{document}
 \maketitle
@@ -16,13 +16,13 @@
 \section{Introduction}
 \label{sec:intro}
 
-Search engines offering query corrections are the research interest of the project. Search engines offer corrections to overcome corruption in user queries. Corruption is defined as the combined effect of one or more typographical errors. While correction performance is good, details of tools used to compute corrections are not commonly disclosed. Failed user queries followed by a user's own corrections can build an aggregated list of corrupted inputs for an intended result, for longer queries the probabilities for words in context can also be accounted for \cite{noampatent}. Probabilistic edit-distance implementations are also used \cite{howtospellcorrector}.
+Search engines that offer corrections to overcome corruption in user queries are the research interest of this project. Corruption is defined as the combined effect of one or more typographical errors. While correction performance is, in cases, good, details of tools used to compute corrections are not publicly available. Fundamentally, failed user queries followed by a user's own corrections can build an aggregated list of corrupted inputs for an intended result. For longer queries the probabilities for words in context can also be accounted for \cite{noampatent}. Probabilistic edit-distance implementations are also used \cite{howtospellcorrector}.
 
-The project aim is to evaluate the variation in the correction accuracy of responses from a number of common search engines. Correction accuracy is defined as the capability of a search engine suggest or adopt the intended query, given a corrupted version. This is tested using queries of different lengths for a given rate of corruption.
+The project aim is to evaluate the variation in the correction accuracy of responses from a number of common search engines. Correction accuracy is defined as the capability of a search engine to suggest or adopt the intended query, given a corrupted query. This is tested using queries of different lengths for a given rate of corruption.
 
-Information about search engine correction accuracy, would be useful for those making mechanical use of search engines. A ranked list of search engines by correction accuracy could also be of interest to those with poor spelling or dexterity from conditions such as Dyslexia or Parkinson's disease. More generally, the effect of length in corrupted strings on error correction for information transfer using an error prone channel is of broader interest.
+Information about search engine correction accuracy, would be useful for those making mechanical use of search engines. A ranked list of search engines by correction accuracy could also be of interest to those with poor spelling or dexterity from conditions such as Dyslexia or Parkinson's disease. More generally, the effect of corrupted string length on error correction for information transfer over an error prone channel is of broader interest.
 
-Sections 2-7 cover: spelling correction background as a task in natural language processing, the research questions, the design of the comparison experiments, the results, their discussion and conclusion respectively.
+Sections 2-7 cover spelling correction background as a task in natural language processing, the research questions, the design of the comparison experiments, the results, their discussion and conclusion respectively.
 
 \section{Background and Related Work}
 \label{sec:lit}
