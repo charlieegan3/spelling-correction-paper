@@ -120,7 +120,7 @@ DuckDuckGo returned the most accurate corrections overall. Bing and Google where
 
 The results suggest that length impacts correction accuracy, when other variables remain constant. This pattern was consistent across eight of the nine search engines. This suggests shorter queries are better corrected, and more generally, that error correction of corrupted data from an error prone channel is more successful for shorter sequences.
 
-The secondary finding, that search engines differ in correction accuracy, is also of interest. This suggests their query correction implementations differ, though a number of the results are similar. It is also of interest that greater query volume is not required to for best-in-class performance. Google performed worse than DuckDuckGo but handles more than 30 times the number of queries \cite{enginecomparewiki}, unfortunately accurate traffic figures are only available for three of the search engines under test. Thees would suggest that, despite an apparent trend towards using user activity to train error models \cite{webuserpoweredspelling, webuser3, webuser2learningerrormodel, webuser4google2009}, it is not the only requirement for a high performance implementation. It is also possible that, at a given threshold, additional traffic is no longer beneficial. DuckDuckGo is also the only search engine under test known not to offer personalised results.
+The secondary finding, that search engines differ in correction accuracy, is also of interest. This suggests their query correction implementations differ, though a number of the results are similar. It is also of interest that greater query volume is not required to for best-in-class performance. Google performed worse than DuckDuckGo but handles more than 30 times the number of queries \cite{enginecomparewiki}, unfortunately accurate traffic figures are only available for three of the search engines under test. This would suggest that, despite an apparent trend towards using user activity to train error models \cite{webuserpoweredspelling, webuser3, webuser2learningerrormodel, webuser4google2009}, it is not the only requirement for a high performance implementation. It is also possible that, at a given threshold, additional traffic is no longer beneficial. DuckDuckGo is also the only search engine under test known not to offer personalised results. See Appendix 6 for a plot of Alexa rank against average accuracy.
 
 The trend in is perhaps partially explained by the number of Alexa brands at each length. Four, eight, and twelve characters have counts 35, 28, \textbf{9} respectively. However, this does not explain the difference in the Google trend. It is possible that the eight letter seed terms are more common queries on Google than other search engines - though this seems unlikely.
 
@@ -245,6 +245,13 @@ Bartlett K-squared results do not give cause to reject the test's null hypothesi
 \begin{figure}[H]
   \centerline{\includegraphics[width=0.7\textwidth]{residual_histogram}}
   \caption{Distribution of accuracy residuals of for lengths and search engines}\label{fig:9searchengines}
+\end{figure}
+
+\pagebreak
+\section{Appendix 6: Alexa Rank Accuracy Plot}
+\begin{figure}[H]
+  \centerline{\includegraphics[width=0.7\textwidth]{rank_scatter}}
+  \caption{Alexa rank vs average accuracy for each search engine, showing DuckDuckGo as a clear outlier}\label{fig:9searchengines}
 \end{figure}
 
 \end{document}
