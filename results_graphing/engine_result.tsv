@@ -1,28 +1,28 @@
-engine	result	length
-ask	0.2333333	4 chars
-ask	0.09333330000000001	8 chars
-ask	0.0033333	12 chars
-baidu	0.1533333	4 chars
-baidu	0.1066667	8 chars
-baidu	0.0866667	12 chars
-bing	0.27	4 chars
-bing	0.22	8 chars
-bing	0.15	12 chars
-duckduckgo	0.2766667	4 chars
-duckduckgo	0.2766667	8 chars
-duckduckgo	0.1866667	12 chars
-google	0.2133333	4 chars
-google	0.27	8 chars
-google	0.1666667	12 chars
-sogou	0.0966667	4 chars
-sogou	0.04	8 chars
-sogou	0.0133333	12 chars
-yahoo	0.2533333	4 chars
-yahoo	0.2033333	8 chars
-yahoo	0.06	12 chars
-yandex	0.05	4 chars
-yandex	0.0066667	8 chars
-yandex	0.0	12 chars
-youdao	0.1033333	4 chars
-youdao	0.1	8 chars
-youdao	0.0233333	12 chars
+engine	result	length	rank
+ask	0.2333333	4 chars	33
+ask	0.09333330000000001	8 chars	33
+ask	0.0033333	12 chars	33
+baidu	0.1533333	4 chars	4
+baidu	0.1066667	8 chars	4
+baidu	0.0866667	12 chars	4
+bing	0.27	4 chars	21
+bing	0.22	8 chars	21
+bing	0.15	12 chars	21
+duckduckgo	0.2766667	4 chars	601
+duckduckgo	0.2766667	8 chars	601
+duckduckgo	0.1866667	12 chars	601
+google	0.2133333	4 chars	1
+google	0.27	8 chars	1
+google	0.1666667	12 chars	1
+sogou	0.0966667	4 chars	99
+sogou	0.04	8 chars	99
+sogou	0.0133333	12 chars	99
+yahoo	0.2533333	4 chars	5
+yahoo	0.2033333	8 chars	5
+yahoo	0.06	12 chars	5
+yandex	0.05	4 chars	2190
+yandex	0.0066667	8 chars	2190
+yandex	0.0	12 chars	2190
+youdao	0.1033333	4 chars	597
+youdao	0.1	8 chars	597
+youdao	0.0233333	12 chars	597

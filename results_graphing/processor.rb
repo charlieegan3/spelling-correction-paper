@@ -24,12 +24,13 @@ output_table = Hash.new([])
 end
 
 engine_file = File.open('engine_result.tsv', 'w')
-engine_file.write "engine\tresult\tlength\n"
+engine_file.write "engine\tresult\tlength\trank\n"
 
 index = [4,8,12].map {|x|"#{x} chars"}
-table = {"ask"=>"us", "baidu"=>"asia", "bing"=>"us", "duckduckgo"=>"us", "google"=>"us", "sogou"=>"asia", "yahoo"=>"us", "yandex"=>"asia", "youdao"=>"asia"}
+regions = {"ask"=>"us", "baidu"=>"asia", "bing"=>"us", "duckduckgo"=>"us", "google"=>"us", "sogou"=>"asia", "yahoo"=>"us", "yandex"=>"asia", "youdao"=>"asia"}
+ranks = {"ask"=>"33", "baidu"=>"4", "bing"=>"21", "duckduckgo"=>"601", "google"=>"1", "sogou"=>"99", "yahoo"=>"5", "yandex"=>"2190", "youdao"=>"597"}
 output_table.each do |k, v|
   v.each_with_index do |v2, i|
-    engine_file.write [k, v2/100, index[i]].join("\t") + "\n"
+    engine_file.write [k, v2/100, index[i], ranks[k]].join("\t") + "\n"
   end
 end
