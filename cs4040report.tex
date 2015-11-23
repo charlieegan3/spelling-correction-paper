@@ -159,7 +159,7 @@ This study investigated the effect of query length on error correction accuracy 
   \begin{algorithmic}
     \Function{corruptString}{$string$, $count$}
         \State $string \gets downcase(string)$
-        \State $indexes \gets$ $\{ x \in \mathbb{Z} \ \vert \ 1 \leq x \leq length(string) \}$
+        \State $indexes \gets$ $\langle x \in \mathbb{Z} \ \vert \ 1 \leq x \leq length(string) \rangle$
         \State $indexes \gets$ $randomOrder(indexes)$
         \Repeat
         \State $indexToCorrupt \gets pop(indexes)$
