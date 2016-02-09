@@ -1,17 +1,30 @@
-\documentclass{csfourzero}
-\usepackage{url, natbib, upquote, multicol, caption, subcaption, float, algorithmicx, algpseudocode, enumitem}
+\documentclass{article}
+\usepackage{url, natbib, upquote, multicol, caption, subcaption, float, algorithmicx, algpseudocode, enumitem, amsfonts, multicol, datetime}
+\usepackage[pdftex]{graphicx}
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  total={170mm,257mm},
+  top=20mm,
+  bottom=20mm,
+  left=18mm,
+  right=18mm
+}
 \setlength{\bibsep}{0pt plus 0.3ex}
 \setitemize[0]{leftmargin=10pt,itemindent=3pt}
 
 \title{The effect of query length and search engine identity on computerised spelling correction of corrupted queries}
 \author{Charlie F.\ Egan}
-\date{\today}
+\newdate{date}{23}{11}{2015}
+\date{\displaydate{date}}
 
 \bibliographystyle{plain}
-\abstract{Search engines are able to improve query error correction by monitoring user behavior. Rather than relying on traditional spelling correction algorithms alone, the query patterns of users can be built into a more realistic error model. This report investigates the effect of query length and search engine identity on spelling correction accuracy. The performance of a number of common search engines is compared and related concepts discussed. It was found that search engines differ significantly in performance and that accuracy is affected by query length.}
 
 \begin{document}
 \maketitle
+\abstract{Search engines are able to improve query error correction by monitoring user behavior. Rather than relying on traditional spelling correction algorithms alone, the query patterns of users can be built into a more realistic error model. This report investigates the effect of query length and search engine identity on spelling correction accuracy. The performance of a number of common search engines is compared and related concepts discussed. It was found that search engines differ significantly in performance and that accuracy is affected by query length.}
+
+\begin{multicols}{2}
 
 \section{Introduction}
 \label{sec:intro}
@@ -83,6 +96,8 @@ To address the second question, using the same set of results, an average score 
 \section{Results}
 \label{sec:results}
 
+\end{multicols}
+
 \begin{figure}[H]
   \centering
   \begin{minipage}{.5\textwidth}
@@ -98,6 +113,8 @@ To address the second question, using the same set of results, an average score 
     \label{fig:searchengines}
   \end{minipage}
 \end{figure}
+
+\begin{multicols}{2}
 
 Figure~\ref{fig:lengths} shows the average for all nine search engines at each query length. Figure~\ref{fig:searchengines} shows the average accuracy over all query lengths for each search engine. Error bars in both figures represent standard errors in the mean values.
 
@@ -135,12 +152,10 @@ The experiment design was focused on the first question. A more detailed, search
 
 This study investigated the effect of query length on error correction accuracy by testing responses for queries with non-word errors from a number of search engines. This was done to better understand error correction, and more specifically, the effect of query length. The results suggest that increasing length has a negative impact on correction accuracy, when corruption is constant. They also show a clear, and in cases unexpected, difference in the accuracy between search engines, e.g. \textit{Google's} four and \textit{Yahoo's} twelve character performance. These results highlight areas for further error correction development.
 
-\raggedbottom
-\pagebreak
+\end{multicols}
+
 \bibliography{myrefs}
 
-\pagebreak
-\raggedbottom
 \section{Appendix 1: Seed Terms}
 \textbf{Four Letter Seeds}
 \textit{\{Ebay, Bing, Imdb, Etsy, Yelp, Cnet, Vice, Ikea, 9gag, Hulu, Dell, Citi, Asos, Java\}}
@@ -153,13 +168,13 @@ This study investigated the effect of query length on error correction accuracy 
 \textbf{Twelve Letter Seeds}
 \textit{{Spaceshipads, Secureserver, Shutterstock, Espncricinfo, Steampowered, Mercadolivre, Extratorrent, Liveinternet, Infusionsoft, Surveymonkey}}
 
-\pagebreak
 \raggedbottom
+\pagebreak
 \section{Appendix 2: Corruption Algorithm}
   \begin{algorithmic}
     \Function{corruptString}{$string$, $count$}
         \State $string \gets downcase(string)$
-        \State $indexes \gets$ $\langle x \in \mathbb{Z} \ \vert \ 1 \leq x \leq length(string) \rangle$
+        \State $indexes \gets$ $ \langle x \in \mathbb{Z} \ \vert \ 1 \leq x \leq length(string) \rangle$
         \State $indexes \gets$ $randomOrder(indexes)$
         \Repeat
         \State $indexToCorrupt \gets pop(indexes)$
@@ -172,7 +187,6 @@ This study investigated the effect of query length on error correction accuracy 
     \EndFunction
   \end{algorithmic}
 
-\pagebreak
 \raggedbottom
 \section{Appendix 3: Letter Substitutions}
 \begin{multicols}{2}
@@ -220,14 +234,12 @@ This study investigated the effect of query length on error correction accuracy 
 \end{multicols}
 
 
-\pagebreak
 \section{Appendix 4: Detailed Search Engine Plot}
 \begin{figure}[H]
   \centerline{\includegraphics[width=\textwidth]{eng_vs_acc_9_way}}
   \caption{Accuracies for each length of each search engine compared}\label{fig:9searchengines}
 \end{figure}
 
-\pagebreak
 \section{Appendix 5: ANOVA Assumption Validation}
 \subsection{Independence of Observations}
 Search engines were assumed to operate independently. Each query is made programmatically using a fresh session.
@@ -245,7 +257,6 @@ Bartlett K-squared results do not give cause to reject the test's null hypothesi
   \caption{Distribution of accuracy residuals of for lengths and search engines}\label{fig:9searchengines}
 \end{figure}
 
-\pagebreak
 \section{Appendix 6: \textit{Alexa} Rank Accuracy Plot}
 \begin{figure}[H]
   \centerline{\includegraphics[width=0.7\textwidth]{rank_scatter}}
